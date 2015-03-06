@@ -2,13 +2,14 @@
 
 path = require 'path'
 gulp = require 'gulp'
+webpack = require 'webpack'
 
 module.exports =
 
   cache: true
 
   entry:
-    app: 'app'
+    app: './src/app/app.js'
     
   output:
     filename: 'scripts/[name].js'
@@ -38,7 +39,7 @@ module.exports =
     ]
 
   resolve:
-    root: path.join(__dirname, 'src/app')
+    root: path.join(__dirname, 'src', 'app')
 
     # alias:
     #      # replace backbones underscore dependency with lodash
@@ -55,12 +56,14 @@ module.exports =
     ]
 
     modulesDirectories: [
-      'app'
+      'src/app/components'
       'bower_components'
       'node_modules'
     ]
 
-  # plugins: [
+   plugins: [
+    # new webpack.ProvidePlugin("angular": "angular")
+   ]
   #   # extract common chunks from the 'app' and 'admin' entries into 'common.js'
   #   new commonsPlugin('javascripts/common.js', ['app', 'admin'])
   # ]

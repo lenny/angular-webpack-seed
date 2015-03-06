@@ -7,5 +7,5 @@ paths = gulp.paths;
 gulp.task 'clean', ->
   rm '-rf', "#{paths.dist}/*", "#{paths.tmp}/*"
   
-gulp.task 'build', ['html', 'scripts']
+gulp.task 'build', ['html', 'webpack']
   
