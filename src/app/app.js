@@ -3,14 +3,8 @@
 var angular = require('angular');
 
 require('view1/view1');
-
-// Declare app level module which depends on views, and components
-//var myApp = [
-//    require('angular-route'),
-//    require('view1/view1'),
-////  'myApp.view2',
-////  'myApp.version'
-//];
+require('view2/view2');
+require('components/version/version');
 
 angular.module('myApp',[
     require('angular-route')

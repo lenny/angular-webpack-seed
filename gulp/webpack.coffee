@@ -9,7 +9,7 @@ webpackConfig = require('../webpack.config')
 
 devConfig = Object.create(webpackConfig)
 devConfig.output.path = buildenv.destDir()
-devConfig.devtool = 'source-map'
+devConfig.devtool = '#source-map'
 devConfig.debug = true
 
 productionConfig = Object.create(webpackConfig)

@@ -3,6 +3,7 @@
 path = require 'path'
 gulp = require 'gulp'
 webpack = require 'webpack'
+buildEnv = require './gulp/buildenv'
 
 module.exports =
 
@@ -56,7 +57,9 @@ module.exports =
     ]
 
     modulesDirectories: [
-      'src/app/components'
+      'src/app'
+      'src/app/components',
+      buildEnv.destDir(),
       'bower_components'
       'node_modules'
     ]
