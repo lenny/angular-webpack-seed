@@ -20,7 +20,7 @@ productionConfig.plugins.concat(
   new webpack.optimize.UglifyJsPlugin()
 )
 
-gulp.task 'webpack', [], (callback)->
+gulp.task 'webpack', ['templates'], (callback)->
   config = if buildenv.production() then devConfig else productionConfig
 
   webpack config, (err, stats) ->
