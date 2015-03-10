@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+var angular = require('angular');
+
+angular.module('myApp.view2', [require('angular-route')])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view2', {

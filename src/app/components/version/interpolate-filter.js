@@ -1,5 +1,7 @@
 'use strict';
 
+var angular = require('angular');
+
 angular.module('myApp.version.interpolate-filter', [])
 
 .filter('interpolate', ['version', function(version) {

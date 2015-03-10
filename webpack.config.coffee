@@ -2,7 +2,6 @@
 
 path = require 'path'
 gulp = require 'gulp'
-webpack = require 'webpack'
 
 module.exports =
 
@@ -16,6 +15,12 @@ module.exports =
     chunkFilename: 'scripts/[chunkhash].js'
 
   module:
+    noParse: [
+      path.join 'bower_components', 'angular'
+      path.join 'bower_components', 'angular-route'
+      path.join 'bower_components', 'angular-mocks'
+    ]       
+ 
     loaders: [
       {
         test: /\.coffee$/
@@ -56,15 +61,11 @@ module.exports =
     ]
 
     modulesDirectories: [
-      'src/app'
       '.tmp/templates'
       'bower_components'
       'node_modules'
     ]
 
    plugins: [
-    # new webpack.ProvidePlugin("angular": "angular")
+
    ]
-  #   # extract common chunks from the 'app' and 'admin' entries into 'common.js'
-  #   new commonsPlugin('javascripts/common.js', ['app', 'admin'])
-  # ]

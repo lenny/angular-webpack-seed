@@ -1,5 +1,7 @@
 'use strict';
 
+var angular = require('angular');
+
 require('./interpolate-filter');
 require('./version-directive');
 

@@ -1,8 +1,10 @@
 'use strict';
 
+require('view2/view2');
+
 describe('myApp.view2 module', function() {
 
-  beforeEach(module('myApp.view2'));
+  beforeEach(angular.mock.module('myApp.view2'));
 
   describe('view2 controller', function(){
 

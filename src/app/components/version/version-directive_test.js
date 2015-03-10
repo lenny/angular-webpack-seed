@@ -1,11 +1,13 @@
 'use strict';
 
+require('components/version/version-directive');
+
 describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(angular.mock.module('myApp.version.version-directive'));
 
   describe('app-version directive', function() {
     it('should print current version', function() {
-      module(function($provide) {
+      angular.mock.module(function($provide) {
         $provide.value('version', 'TEST_VER');
       });
       inject(function($compile, $rootScope) {

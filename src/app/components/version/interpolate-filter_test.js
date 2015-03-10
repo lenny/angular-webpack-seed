@@ -1,10 +1,12 @@
 'use strict';
 
+require('components/version/interpolate-filter');
+
 describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(angular.mock.module('myApp.version.interpolate-filter'));
 
   describe('interpolate filter', function() {
-    beforeEach(module(function($provide) {
+    beforeEach(angular.mock.module(function($provide) {
       $provide.value('version', 'TEST_VER');
     }));
 
